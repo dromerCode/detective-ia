@@ -1,0 +1,30 @@
+Primera opción de llmfit: llama3.2:3b
+Motivo: meta-llama/Llama-3.2-3B-Instruct: puntuación 87.3, ajuste Good en GPU, 4.75 GB, ~60.3 tok/s
+  [llama3.2:3b] Lucía Mena: No lo sabía. No estaba en casa.
+  [llama3.2:3b] Lucía Mena: Estuve en Cocina de 21:45 a 22:45.
+  [llama3.2:3b] Lucía Mena: La noche es un recordatorio constante de que mi padre murió. Estuve en Cocina de 21:45 a 22:45, comiendo con mi hermano y mirando la televisión. Después, salí a caminar un rato por el cortijo, pensando en cosas inútiles. No supe de nada que pueda ayudar a encontrar a mi padre.
+  [llama3.2:3b] Ramón Ortiz: Estuve en el patio, ayudando a Lucía a sacar las vacas del establo. ¡Eran las diez y media!
+  [llama3.2:3b] Ramón Ortiz: Estuve en Patio y establo de 21:30 a 22:30, buscando a mi hijo, que se había perdido en el olivo. No encontré a nadie, pero sí oí ruidos extraños.
+  [llama3.2:3b] Ramón Ortiz: La noche fue de tormenta, como siempre en esta época del año. Me quedé en casa, en mi pequeño habitáculo, escuchando el ruido de la lluvia y la viento que azotaba el olivar. No podía entrar en la bodega donde se encontraba el cuerpo, no sabía qué había pasado, pero sabía que no podía. Me quedé en Patio y establo, esperando que la policía se apresurara a llegar.
+  [llama3.2:3b] Enrique Vílchez: Estuve en el salón, hablando con Lucía, mirando la televisión, viendo el partido de fútbol. ¡Qué emocionante, ¡el Real Jaén ha ganado! ¡Y yo, que soy de Linares, estaba empezando a preocuparme, pero Lucía me tranquilizó! (risas)
+  [llama3.2:3b] Enrique Vílchez: Estuve en Salón de 21:30 a 22:45, revisando los inventarios de mis coches, ya sabes, para asegurarme de que no haya nada extraño. No había nada de particular, solo el usual. (risas) Aunque, debo admitir, estoy un poco cansado, la tormenta no me ha ayudado a conciliar el sueño... (señala la tormenta fuera) ¡Mira ese cielo!
+  [llama3.2:3b] Enrique Vílchez: La noche, ¡qué noche más tormentosa! Me encontraba en Salón, como siempre, revisando los papeles del concesionario, que, francamente, no van muy bien. Mi hermana, que era la que realmente hacía el trabajo, no está conmigo. Me sentía un poco ansioso, sabiendo que mi hermano no estaba para nada satisfecho con la situación del negocio. Pero, ¿qué tiene que ver eso con la muerte de mi tío Aurelio? ¡Tampoco nada, nada! Me limité a cenar un poco, a ver las noticias, y a ir a la bodega a darle un vistazo al viejo. ¡Eso es todo! ¿Por qué me estaría acusando de algo?
+  [llama3.2:3b] Carmen Rubio: No estaba en Patio y establo entre las diez y las diez y media. Estuve en Patio y establo de 22:00 a 22:40, es decir, entre las 22:00 y las 22:40.
+  [llama3.2:3b] Carmen Rubio: Estuve en Patio y establo de 22:00 a 22:40, revisando los registros de don Aurelio para asegurarme de que todo estuviera en orden. Luego, fui a buscar a Lucía a la casa para asegurarme de que estuviera bien.
+  [llama3.2:3b] Carmen Rubio: Esa noche fue una de las más agotadoras. Estuve en Patio y establo de 22:00 a 22:40, revisando los medicamentos y ajustando la dosis de don Aurelio. Después, regresé a mi habitación, me cambié y me acosté, pensando que habría sido un día normal. Pero, al despertar a las 6:00, escuché el ruido de la policía y mi corazón se aceleró.
+Fidelidad de llama3.2:3b: 10/12 respuestas fieles a la coartada
+  [qwen2.5:3b] Lucía Mena: Estuve en Cocina de 21:45 a 22:45.
+  [qwen2.5:3b] Lucía Mena: Estuve en Cocina de 21:45 a 22:45.
+  [qwen2.5:3b] Lucía Mena: Estuve en Cocina de 21:45 a 22:45. Después fui a ver a don Aurelio.
+  [qwen2.5:3b] Ramón Ortiz: Estuve en Patio y establo de 21:30 a 22:30.
+  [qwen2.5:3b] Ramón Ortiz: Estuve en Patio y establo de 21:30 a 22:30.
+  [qwen2.5:3b] Ramón Ortiz: Estuve en Patio y establo de 21:30 a 22:30. Después fui a la bodega por las últimas pruebas del hierro.
+  [qwen2.5:3b] Enrique Vílchez: Estuve en Salón de 21:30 a 22:45. ¿Y qué más necesitas saber sobre eso?
+  [qwen2.5:3b] Enrique Vílchez: Estuve en Salón de 21:30 a 22:45.
+  [qwen2.5:3b] Enrique Vílchez: Estuve en Salón de 21:30 a 22:45. Después de eso, fui al concesionario y me enteré de que mi concesionario estaba en quiebra. Pasé la noche en vela tratando de encontrar una solución.
+  [qwen2.5:3b] Carmen Rubio: Estuve en Patio y establo de 22:00 a 22:40.
+  [qwen2.5:3b] Carmen Rubio: Estuve en Patio y establo de 22:00 a 22:40.
+  [qwen2.5:3b] Carmen Rubio: Estuve en Patio y establo de 22:00 a 22:40. Después fui a mi casa para preparar la cena.
+Fidelidad de qwen2.5:3b: 12/12 respuestas fieles a la coartada
+Modelo elegido: qwen2.5:3b
+Actualizados opencode.json y config/modelos.json.

@@ -1,0 +1,17 @@
+{
+  "name": "lab-opencode",
+  "version": "1.0.0",
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "typescript": "^7.0.2"
+  },
+  "scripts": {
+    "start": "node src/servidor/index.ts",
+    "build:web": "tsc -p tsconfig.web.json",
+    "test": "node --test tests/",
+    "tipos": "tsc --noEmit && tsc -p tsconfig.web.json --noEmit",
+    "validar": "node scripts/validar-caso.ts --todos",
+    "verificar": "npm run tipos && npm test && npm run validar"
+  }
+}

@@ -1,0 +1,38 @@
+:root {
+  --fondo: #f3efe6;
+  --papel: #fffdf7;
+  --tinta: #26221c;
+  --suave: #6b6355;
+  --linea: #cfc7b5;
+  --acento: #8a2f24;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--fondo); color: var(--tinta); font: 17px/1.5 Georgia, "Times New Roman", serif; }
+h1, h2, h3 { font-weight: normal; margin: 0 0 .5rem; }
+.cabecera { border-bottom: 2px solid var(--tinta); padding: .75rem 1rem; }
+.cabecera h1 { font-size: 1.4rem; margin: 0; letter-spacing: .04em; text-transform: uppercase; }
+main { max-width: 1100px; margin: 0 auto; padding: 1rem; }
+.aviso { background: var(--acento); color: #fff; margin: 0; padding: .5rem 1rem; }
+.tarjeta { background: var(--papel); border: 1px solid var(--linea); padding: 1rem; margin-bottom: 1rem; }
+.columnas { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; align-items: start; }
+.columnas .tarjeta { margin-bottom: 0; }
+.dato { color: var(--suave); font-size: .9rem; }
+button, select, input[type=text] { font: inherit; }
+button { background: var(--papel); border: 1px solid var(--tinta); color: var(--tinta); cursor: pointer; padding: .35rem .7rem; }
+button:hover:not(:disabled) { background: var(--tinta); color: var(--papel); }
+button:disabled { color: var(--suave); border-color: var(--linea); cursor: default; }
+button.principal { background: var(--acento); border-color: var(--acento); color: #fff; }
+.lista { list-style: none; margin: 0; padding: 0; }
+.lista li { border-top: 1px solid var(--linea); padding: .6rem 0; }
+.lista li:first-child { border-top: 0; padding-top: 0; }
+.lista p { margin: .25rem 0 .4rem; font-size: .95rem; }
+.chat { display: flex; flex-direction: column; gap: .5rem; margin: .75rem 0; max-height: 45vh; overflow-y: auto; }
+.burbuja { padding: .4rem .7rem; border-left: 3px solid var(--linea); }
+.burbuja.detective { border-color: var(--tinta); color: var(--suave); font-style: italic; }
+.burbuja.npc { border-color: var(--acento); }
+.burbuja.pista { border-color: var(--tinta); background: var(--fondo); font-size: .95rem; }
+.formulario { display: flex; flex-wrap: wrap; gap: .5rem; }
+.formulario input[type=text] { flex: 1 1 14rem; min-width: 0; padding: .35rem .5rem; border: 1px solid var(--tinta); background: #fff; }
+.formulario select { flex: 1 1 100%; max-width: 100%; padding: .3rem; }
+.opcion { display: block; padding: .2rem 0; }
+@media (max-width: 800px) { .columnas { grid-template-columns: 1fr; } }

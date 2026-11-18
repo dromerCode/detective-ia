@@ -1,0 +1,31 @@
+[0m
+> prompt-engineer · nvidia/nemotron-3-ultra-550b-a55b:free
+## 3 fallos más importantes
+
+---
+
+### 1. **Referencias a archivos que la Gema no puede leer**
+**Fallo:** El prompt menciona `esquema-caso.md` y `el-cortijo.json` como si la Gema tuviera acceso al sistema de archivos del usuario. Las Gemas de Gemini **no leen archivos locales** a menos que el usuario los pegue en la conversación.
+
+**Arreglo:** Incluye el esquema JSON completo y el ejemplo mínimo directamente en el prompt (o en un bloque `---ESQUEMA---` / `---EJEMPLO---`).
+
+---
+
+### 2. **Autoverificación sin procedimiento de fallo**
+**Fallo:** La lista de 7 preguntas de autoverificación son criterios de validación, pero el prompt no dice **qué hacer si alguna falla**: ¿reintentar solo lo que falla? ¿devolver un error estructurado? ¿pedir ayuda al usuario?
+
+**Arreglo:** Añade un bloque explícito:
+```
+Si alguna comprobación falla:
+- Marca `autoverificacion: "fallida"`
+- Incluye `errores: ["E_CODIGO: descripción"]`
+- NO devuelvas el caso completo
+- Pide al usuario que indique qué corregir
+```
+
+---
+
+### 3. **Códigos de error `E_...` sin definir**
+**Fallo:** La instrucción *"Si te pasan un informe con códigos E_..., corrige sólo lo que dice"* asume un catálogo de códigos que **no existe en el prompt**. La Gema no sabrá qué significa `E_ID_DUPLICADO` vs `E_COARTADA_SIN_HECHO`.
+
+**Arreglo:** Define la tabla de códigos esperados en el prompt (o di "usa estos códigos: E_ID_DUP, E_REF_INEXISTENTE, E_BLOQUEO_CIRCULAR, E_INOCENTE_NO_DESCARTADO, E_SOBRAN_PRUEBAS, E_DOBLE_UBICACION, E_MIENTE_SIN_CHOQUE").

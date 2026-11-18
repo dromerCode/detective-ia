@@ -1,0 +1,94 @@
+{
+  "id": "el-cortijo",
+  "titulo": "Muerte en el Cortijo de los Almendros",
+  "ambientacion": "Un cortijo olivarero en la sierra de Jaén, noche de tormenta de noviembre de 1987. La familia Mena se ha reunido para hablar del futuro de la finca.",
+  "introduccion": "A las 22:45 encuentran a don Aurelio Mena muerto en la bodega del cortijo, golpeado con el atizador de la lumbre. La tormenta ha cortado el camino y nadie ha podido salir. La Guardia Civil tardará horas en llegar: hasta entonces, el caso es suyo.",
+  "dificultad": "media",
+  "crimen": {
+    "victima": "Don Aurelio Mena, 71 años, dueño del cortijo",
+    "lugar": "bodega",
+    "arma": "el atizador de hierro de la lumbre de la bodega",
+    "desde": "22:00",
+    "hasta": "22:30"
+  },
+  "lugares": [
+    { "id": "salon", "nombre": "Salón", "descripcion": "Chimenea encendida, muebles de nogal y un aparador lleno de papeles. Aquí se cenó a las nueve." },
+    { "id": "cocina", "nombre": "Cocina", "descripcion": "Huele a guiso. La cocinera, Encarna, ha dejado sus notas del día pegadas junto a la despensa." },
+    { "id": "despacho", "nombre": "Despacho de don Aurelio", "descripcion": "Libros de cuentas, un teléfono sin línea y un cajón del escritorio mal cerrado." },
+    { "id": "cuarto-invitados", "nombre": "Cuarto de invitados", "descripcion": "La habitación donde duerme Enrique cuando visita el cortijo. Una chaqueta mojada cuelga de la silla." },
+    { "id": "patio", "nombre": "Patio y establo", "descripcion": "Barro, lluvia y la luz del establo encendida. Desde aquí se ve la puerta de la bodega." },
+    { "id": "bodega", "nombre": "Bodega", "descripcion": "Tinajas de aceite y vino, una lumbre aún caliente y el cuerpo de don Aurelio junto a ella. Siempre está cerrada con llave.", "requiere": "p-llave-bodega" }
+  ],
+  "sospechosos": [
+    {
+      "id": "lucia",
+      "nombre": "Lucía Mena",
+      "perfil": "Hija de don Aurelio, 38 años, vive en Madrid y ha vuelto para el fin de semana.",
+      "personalidad": "Seca y orgullosa, contesta con ironía. Se pone a la defensiva si se habla de dinero.",
+      "secreto": "Ha firmado en secreto un precontrato para vender su parte de la finca a una constructora de Málaga.",
+      "coartada": { "lugar": "cocina", "desde": "21:45", "hasta": "22:45" },
+      "mienteCoartada": false,
+      "conoce": ["h-lucia-cocina", "h-enrique-movil"],
+      "respuestaReserva": "Ya le he dicho todo lo que sé. Estaba en la cocina con Encarna."
+    },
+    {
+      "id": "ramon",
+      "nombre": "Ramón Ortiz",
+      "perfil": "Capataz del cortijo desde hace treinta años, 59 años.",
+      "personalidad": "Hombre de pocas palabras, leal a la familia, desconfía de los señoritos de ciudad. Habla con expresiones del campo.",
+      "secreto": "Lleva meses vendiendo gasóleo de la finca a escondidas para pagar las deudas de su hijo.",
+      "coartada": { "lugar": "patio", "desde": "21:30", "hasta": "22:30" },
+      "mienteCoartada": false,
+      "conoce": ["h-ramon-sin-acceso", "h-enrique-bodega"],
+      "respuestaReserva": "Yo estaba con las bestias, que con la tormenta se ponen malas. No sé más."
+    },
+    {
+      "id": "enrique",
+      "nombre": "Enrique Vílchez",
+      "perfil": "Cuñado de don Aurelio, 55 años, viudo de su hermana. Tiene un concesionario de coches en Linares.",
+      "personalidad": "Simpático y muy hablador, siempre con una broma. Cuando se pone nervioso habla todavía más y cambia de tema.",
+      "secreto": "Su concesionario está en quiebra.",
+      "coartada": { "lugar": "salon", "desde": "21:30", "hasta": "22:45" },
+      "mienteCoartada": true,
+      "conoce": ["h-enrique-bodega", "h-enrique-acceso", "h-enrique-movil"],
+      "respuestaReserva": "Mire, yo estuve en el salón leyendo el periódico toda la noche. Pregunte a quien quiera."
+    },
+    {
+      "id": "carmen",
+      "nombre": "Carmen Rubio",
+      "perfil": "Médica del pueblo, 46 años, visitaba a don Aurelio cada semana por su corazón.",
+      "personalidad": "Educada, precisa y fría. Usa términos médicos y mide mucho lo que dice.",
+      "secreto": "Le recetaba a don Aurelio más morfina de la necesaria porque él se lo pedía.",
+      "coartada": { "lugar": "patio", "desde": "22:00", "hasta": "22:40" },
+      "mienteCoartada": false,
+      "conoce": ["h-carmen-sin-movil"],
+      "respuestaReserva": "Estaba fuera, en el porche del patio, intentando que el coche arrancara. Nada más."
+    }
+  ],
+  "hechos": [
+    { "id": "h-lucia-cocina", "tipo": "presencia", "sujeto": "lucia", "lugar": "cocina", "desde": "21:45", "hasta": "22:45" },
+    { "id": "h-lucia-movil", "tipo": "movil", "sujeto": "lucia", "valor": true, "descripcion": "Su padre se negaba a vender la finca y ella necesitaba el dinero de la constructora." },
+    { "id": "h-ramon-sin-acceso", "tipo": "acceso_arma", "sujeto": "ramon", "valor": false },
+    { "id": "h-enrique-bodega", "tipo": "presencia", "sujeto": "enrique", "lugar": "bodega", "desde": "22:05", "hasta": "22:25" },
+    { "id": "h-enrique-acceso", "tipo": "acceso_arma", "sujeto": "enrique", "valor": true },
+    { "id": "h-enrique-movil", "tipo": "movil", "sujeto": "enrique", "valor": true, "descripcion": "Debía tres millones de pesetas a don Aurelio, que le había dado de plazo hasta el lunes o lo denunciaría." },
+    { "id": "h-carmen-sin-movil", "tipo": "movil", "sujeto": "carmen", "valor": false, "descripcion": "Don Aurelio era su paciente más fiel; con su muerte pierde ingresos y no hereda nada." }
+  ],
+  "pistas": [
+    { "id": "p-llave-bodega", "nombre": "Llave de la bodega", "texto": "En el cajón del escritorio está la llave grande de la bodega, la de don Aurelio.", "revela": [], "origen": { "tipo": "lugar", "lugar": "despacho" } },
+    { "id": "p-pagares", "nombre": "Pagarés de Enrique", "texto": "Tres pagarés firmados por Enrique Vílchez, por un total de tres millones de pesetas. Una nota de don Aurelio: «Plazo hasta el lunes. Si no, al juzgado».", "revela": ["h-enrique-movil"], "origen": { "tipo": "lugar", "lugar": "despacho" } },
+    { "id": "p-cuaderno-cerradura", "nombre": "Cuaderno de la finca", "texto": "Anotación de octubre: «Ramón ha perdido su llave de la bodega. Cambio la cerradura. Sólo quedan la mía y la del cerrajero».", "revela": ["h-ramon-sin-acceso"], "origen": { "tipo": "lugar", "lugar": "despacho" } },
+    { "id": "p-testamento", "nombre": "Borrador del testamento", "texto": "Un borrador del testamento: todo para Lucía, con una manda para el capataz. La doctora Rubio no aparece por ningún lado; en una esquina, don Aurelio ha escrito «Carmen, la única que me aguanta».", "revela": ["h-carmen-sin-movil"], "origen": { "tipo": "lugar", "lugar": "salon" } },
+    { "id": "p-carta-constructora", "nombre": "Carta de una constructora", "texto": "Una carta de Construcciones Costa del Sol agradeciendo a Lucía Mena «su disposición a vender» y lamentando «la negativa de su padre».", "revela": ["h-lucia-movil"], "origen": { "tipo": "lugar", "lugar": "salon" } },
+    { "id": "p-nota-cocinera", "nombre": "Nota de Encarna", "texto": "Nota de la cocinera: «Señorita Lucía conmigo en la cocina desde que recogimos la cena (menos cuarto) hasta que se oyeron los gritos. Me ayudó con el pisto».", "revela": ["h-lucia-cocina"], "origen": { "tipo": "lugar", "lugar": "cocina" } },
+    { "id": "p-botas", "nombre": "Botas con barro rojo", "texto": "Debajo de la cama, unas botas de Enrique con barro rojizo todavía húmedo.", "revela": [], "origen": { "tipo": "lugar", "lugar": "cuarto-invitados" } },
+    { "id": "p-copia-llave", "nombre": "Copia de llave nueva", "texto": "En el bolsillo de la chaqueta mojada, una llave recién copiada. Encaja con la cerradura nueva de la bodega.", "revela": ["h-enrique-acceso"], "origen": { "tipo": "lugar", "lugar": "cuarto-invitados" } },
+    { "id": "p-barro-bodega", "nombre": "Barro de la bodega", "texto": "El suelo de la bodega es de tierra roja. Hay pisadas de botas que no son las de don Aurelio.", "revela": [], "origen": { "tipo": "lugar", "lugar": "bodega" } },
+    { "id": "p-testimonio-ramon", "nombre": "Testimonio de Ramón", "texto": "Ramón admite que, desde el establo, vio a Enrique salir de la bodega a eso de las diez y veinticinco, mirando a todos lados.", "revela": ["h-enrique-bodega"], "origen": { "tipo": "testimonio", "sospechoso": "ramon", "requiere": ["p-botas", "p-barro-bodega"] } }
+  ],
+  "solucion": {
+    "culpable": "enrique",
+    "pruebasClave": ["p-testimonio-ramon", "p-copia-llave", "p-pagares"],
+    "explicacion": "Enrique debía tres millones a su cuñado, que iba a denunciarle el lunes. Se hizo una copia de la llave nueva de la bodega, entró a las 22:05 y le golpeó con el atizador. Ramón le vio salir a las 22:25 y el barro rojo de sus botas es el de la bodega. Lucía estaba con la cocinera, Ramón no tenía llave desde octubre y la doctora no ganaba nada con la muerte."
+  }
+}

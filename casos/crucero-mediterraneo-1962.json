@@ -1,0 +1,534 @@
+{
+  "id": "crucero-mediterraneo-1962",
+  "titulo": "Muerte en el SS Mediterráneo",
+  "ambientacion": "Agosto de 1962. El SS Mediterráneo, buque insignia de la naviera Vargas, surca el Mediterráneo en un crucero de lujo de dos semanas. Esta noche es la cena de gala del capitán: champán, orquesta y la alta sociedad española e internacional. A las 21:30, don Alejandro Vargas, el armador, cae fulminado tras brindar con su copa de champán. El barco está a medio camino entre Barcelona y Génova; el capitán ha ordenado que nadie abandone el salón hasta que se aclare lo ocurrido.",
+  "introduccion": "Usted es el inspector enviado por la compañía de seguros para resolver el caso antes de que el barco atraque en Génova y la policía italiana se haga cargo. Tiene hasta el amanecer. La víctima: don Alejandro Vargas, 62 años, dueño de la naviera. Causa aparente: envenenamiento por cianuro en el champán. Arma: una ampolla de cianuro de potasio vacía hallada en la bodega de vinos. Hora del crimen: entre las 21:00 (inicio del brindis) y las 21:30 (caída de la víctima).",
+  "dificultad": "media",
+  "crimen": {
+    "victima": "Don Alejandro Vargas, 62 años, armador y dueño de la naviera Vargas",
+    "lugar": "salon-gala",
+    "arma": "cianuro de potasio en el champán de la reserva del armador",
+    "desde": "21:00",
+    "hasta": "21:30"
+  },
+  "lugares": [
+    {
+      "id": "salon-gala",
+      "nombre": "Salón de Gala",
+      "descripcion": "El corazón del barco esta noche. Mesas de caoba, candelabros de cristal, orquesta en la tarima. La mesa principal, donde murió don Alejandro, sigue puesta: copas a medio llenar, el champán derramado, el cuerpo ya retirado a la enfermería."
+    },
+    {
+      "id": "camarote-armador",
+      "nombre": "Camarote del Armador",
+      "descripcion": "Suite de lujo con salón privado, escritorio lleno de correspondencia, caja fuerte abierta y un frasco de pastillas para el corazón sobre la mesilla. Huele a tabaco rubio y colonia barata.",
+      "requiere": "p-llave-maestra"
+    },
+    {
+      "id": "puente-mando",
+      "nombre": "Puente de Mando",
+      "descripcion": "Cartas náuticas, el telégrafo, el radar. Desde aquí se ve la popa del salón de gala a través de la mampara. El capitán Ortega no se ha movido de la carta en toda la noche."
+    },
+    {
+      "id": "enfermeria",
+      "nombre": "Enfermería",
+      "descripcion": "Instrumental quirúrgico, camillas y un armario de medicinas con la puerta mal cerrada. Falta una ampolla del estante de venenos, que se guardan bajo llave."
+    },
+    {
+      "id": "bodega-vinos",
+      "nombre": "Bodega de Vinos",
+      "descripcion": "Filas de botellas en penumbra. En el suelo, junto a la reserva del armador (Champán Bollinger 1955), una ampolla de vidrio rota con restos de polvo blanco. El camarero jefe Rossi lleva la llave maestra."
+    },
+    {
+      "id": "cocina",
+      "nombre": "Cocina",
+      "descripcion": "Horno, fogones, neveras industriales. El chef y su brigada prepararon la cena de gala. Antonio Rossi, camarero jefe, supervisó el servicio del champán personalmente."
+    },
+    {
+      "id": "cubierta-superior",
+      "nombre": "Cubierta Superior",
+      "descripcion": "Cubierta de paseo bajo las estrellas. Bancos de teca, barandilla de bronce. Se oye la orquesta desde el salón. Lugar de cigarrillos y confidencias."
+    }
+  ],
+  "sospechosos": [
+    {
+      "id": "isabel",
+      "nombre": "Isabel Vargas",
+      "perfil": "Viuda del armador, 38 años. Elegante, fría, heredera de la naviera. Se casó por conveniencia; no hay hijos en común.",
+      "personalidad": "Habla con educación exquisita, pero sus ojos no ríen. Contesta con preguntas. Si se le acorrala, saca a relucir su condición de viuda y exige respeto.",
+      "secreto": "Mantiene una aventura con la doctora Márquez desde hace seis meses y pensaba pedirle el divorcio a don Alejandro al acabar el crucero.",
+      "coartada": {
+        "lugar": "salon-gala",
+        "desde": "20:45",
+        "hasta": "22:00",
+        "testigo": "condesa"
+      },
+      "mienteCoartada": false,
+      "conoce": [
+        "h-isabel-movil",
+        "h-isabel-enfermeria"
+      ],
+      "respuestaReserva": "Estaba en mi sitio, a la derecha de Alejandro, brindando por el futuro de la compañía. Pregúntele a la condesa, no me perdí de vista."
+    },
+    {
+      "id": "roberto",
+      "nombre": "Roberto \"Beto\" Vargas",
+      "perfil": "Hijo único del armador, 29 años. Jugador empedernido, deudor de casinos en Marsella y Mónaco. Su padre le acaba de cortar la paga mensual.",
+      "personalidad": "Nervioso, sudoroso, ríe a destiempo. Miente mal y se delata con las manos. Intenta caer simpático pero resulta patético.",
+      "secreto": "Debe 400.000 francos a la mafia marsellesa. Su padre descubrió la deuda ayer y le dijo que si no pagaba él, lo denunciaría a la policía al llegar a Génova.",
+      "coartada": {
+        "lugar": "salon-gala",
+        "desde": "20:50",
+        "hasta": "22:00",
+        "testigo": "antonio"
+      },
+      "mienteCoartada": true,
+      "conoce": [
+        "h-roberto-movil",
+        "h-roberto-cubierta",
+        "h-roberto-acceso"
+      ],
+      "respuestaReserva": "Estaba en la mesa, bebiendo. ¡Juro que no toqué la copa de mi padre!"
+    },
+    {
+      "id": "capitan",
+      "nombre": "Capitán Manuel Ortega",
+      "perfil": "Capitán del SS Mediterráneo, 55 años. 30 años en la naviera. Don Alejandro le ha comunicado que se jubila en octubre; le sustituirá un sobrino del armador, inexperto.",
+      "personalidad": "Hierático, voz de mando, mira a los ojos sin parpadear. Responde lo justo. Odia la política de empresa y a los \"señoritos\".",
+      "secreto": "Ha falsificado el parte de navegación de anoche para ocultar que el barco redujo velocidad (ahorro de combustible) por orden de don Alejandro, poniendo en riesgo la llegada a Génova.",
+      "coartada": {
+        "lugar": "puente-mando",
+        "desde": "20:30",
+        "hasta": "22:15"
+      },
+      "mienteCoartada": false,
+      "conoce": [
+        "h-capitan-sin-acceso",
+        "h-capitan-movil"
+      ],
+      "respuestaReserva": "Yo mando el barco, no sirvo copas. Estuve en el puente toda la noche. El telégrafo lo confirma: a las 21:15 envié el parte de posición a Génova."
+    },
+    {
+      "id": "doctora",
+      "nombre": "Doctora Elena Márquez",
+      "perfil": "Médico de a bordo, 42 años. Brillante, discreta, única mujer oficial del barco.",
+      "personalidad": "Calma clínica, vocabulario preciso. No se altera. Si miente, lo hace con la verdad a medias. Protege a Isabel por encima de todo.",
+      "secreto": "Mantiene una aventura con Isabel Vargas desde hace seis meses y ha estado apuntando en el libro de la enfermería medicinas que vendía por su cuenta.",
+      "coartada": {
+        "lugar": "enfermeria",
+        "desde": "20:30",
+        "hasta": "21:45"
+      },
+      "mienteCoartada": true,
+      "conoce": [
+        "h-doctora-acceso-arma",
+        "h-doctora-movil",
+        "h-doctora-bodega",
+        "h-doctora-salon"
+      ],
+      "respuestaReserva": "Atendí a un marinero con apendicitis aguda. Mi ayudante, el practicante Gómez, puede confirmarlo. Estuve en la enfermería hasta que me llamaron al salón."
+    },
+    {
+      "id": "condesa",
+      "nombre": "Condesa Victoria de Montclair",
+      "perfil": "Aristócrata francesa, 50 años. Rival comercial: su familia controla la naviera Montclair, competidora directa de Vargas en el Mediterráneo occidental.",
+      "personalidad": "Encantadora, culta, habla cuatro idiomas. Sonríe mientras calcula. No amenaza: ofrece tratos que no se pueden rechazar.",
+      "secreto": "Espía industrial: ha sobornado al radiotelegrafista para interceptar las comunicaciones comerciales de Vargas. Esta noche esperaba robar los planos de la nueva flota del armador.",
+      "coartada": {
+        "lugar": "salon-gala",
+        "desde": "20:45",
+        "hasta": "22:00",
+        "testigo": "isabel"
+      },
+      "mienteCoartada": false,
+      "conoce": [
+        "h-condesa-movil",
+        "h-condesa-sin-acceso"
+      ],
+      "respuestaReserva": "Cenaba a la izquierda de don Alejandro. Hablamos de negocios, de arte, del tiempo. No me moví de la silla."
+    },
+    {
+      "id": "antonio",
+      "nombre": "Antonio Rossi",
+      "perfil": "Camarero jefe, 48 años. Napolitano, 20 años en la naviera. Leal al armador, pero chantajeado por la condesa por un delito juvenil en Marsella.",
+      "personalidad": "Servicial, callado, ojos bajos. Sabe todo lo que ocurre en el barco. Si habla, es porque le conviene.",
+      "secreto": "La condesa le obliga a pasar información del armador (horarios, documentos, rutinas) a cambio de no denunciar un robo que cometió a los 18 años.",
+      "coartada": {
+        "lugar": "cocina",
+        "desde": "20:30",
+        "hasta": "21:15"
+      },
+      "mienteCoartada": false,
+      "conoce": [
+        "h-antonio-bodega",
+        "h-antonio-sin-movil"
+      ],
+      "respuestaReserva": "Yo estaba en la cocina con el emplatado. Pregunte al chef."
+    }
+  ],
+  "hechos": [
+    {
+      "id": "h-isabel-salon",
+      "tipo": "presencia",
+      "sujeto": "isabel",
+      "lugar": "salon-gala",
+      "desde": "20:45",
+      "hasta": "22:00"
+    },
+    {
+      "id": "h-isabel-movil",
+      "tipo": "movil",
+      "sujeto": "isabel",
+      "valor": true,
+      "descripcion": "Hereda el 100% de la naviera, y un divorcio la dejaría sin nada."
+    },
+    {
+      "id": "h-isabel-enfermeria",
+      "tipo": "acceso_arma",
+      "sujeto": "isabel",
+      "valor": false,
+      "descripcion": "No tiene conocimientos médicos ni acceso al armario de la enfermería."
+    },
+    {
+      "id": "h-roberto-salon",
+      "tipo": "presencia",
+      "sujeto": "roberto",
+      "lugar": "salon-gala",
+      "desde": "20:50",
+      "hasta": "21:15"
+    },
+    {
+      "id": "h-roberto-cubierta",
+      "tipo": "presencia",
+      "sujeto": "roberto",
+      "lugar": "cubierta-superior",
+      "desde": "21:15",
+      "hasta": "21:35"
+    },
+    {
+      "id": "h-roberto-salon-2",
+      "tipo": "presencia",
+      "sujeto": "roberto",
+      "lugar": "salon-gala",
+      "desde": "21:35",
+      "hasta": "22:00"
+    },
+    {
+      "id": "h-roberto-movil",
+      "tipo": "movil",
+      "sujeto": "roberto",
+      "valor": true,
+      "descripcion": "Deuda de 400.000 francos con la mafia marsellesa. Su padre iba a denunciarle al llegar a Génova."
+    },
+    {
+      "id": "h-roberto-acceso",
+      "tipo": "acceso_arma",
+      "sujeto": "roberto",
+      "valor": false,
+      "descripcion": "No sabe qué es el cianuro ni dónde se guarda. Nunca ha estado en la enfermería ni en la bodega."
+    },
+    {
+      "id": "h-capitan-puente",
+      "tipo": "presencia",
+      "sujeto": "capitan",
+      "lugar": "puente-mando",
+      "desde": "20:30",
+      "hasta": "22:15"
+    },
+    {
+      "id": "h-capitan-movil",
+      "tipo": "movil",
+      "sujeto": "capitan",
+      "valor": true,
+      "descripcion": "Le quitan el mando en octubre para dárselo a un sobrino incompetente. Pierde pensión y honor."
+    },
+    {
+      "id": "h-capitan-sin-acceso",
+      "tipo": "acceso_arma",
+      "sujeto": "capitan",
+      "valor": false,
+      "descripcion": "No tiene llave de la enfermería ni de la bodega. Desconoce el uso médico del cianuro."
+    },
+    {
+      "id": "h-doctora-enfermeria",
+      "tipo": "presencia",
+      "sujeto": "doctora",
+      "lugar": "enfermeria",
+      "desde": "20:30",
+      "hasta": "20:55"
+    },
+    {
+      "id": "h-doctora-bodega",
+      "tipo": "presencia",
+      "sujeto": "doctora",
+      "lugar": "bodega-vinos",
+      "desde": "20:55",
+      "hasta": "21:10"
+    },
+    {
+      "id": "h-doctora-salon",
+      "tipo": "presencia",
+      "sujeto": "doctora",
+      "lugar": "salon-gala",
+      "desde": "21:10",
+      "hasta": "21:35"
+    },
+    {
+      "id": "h-doctora-acceso-arma",
+      "tipo": "acceso_arma",
+      "sujeto": "doctora",
+      "valor": true,
+      "descripcion": "Única llave del armario de medicinas. El cianuro de potasio está en la lista de antídotos oficiales (ficha 47-B)."
+    },
+    {
+      "id": "h-doctora-movil",
+      "tipo": "movil",
+      "sujeto": "doctora",
+      "valor": true,
+      "descripcion": "Don Alejandro había descubierto su aventura con Isabel y las ventas de medicinas. Iba a denunciarla al llegar a Génova y acabar con su carrera."
+    },
+    {
+      "id": "h-condesa-salon",
+      "tipo": "presencia",
+      "sujeto": "condesa",
+      "lugar": "salon-gala",
+      "desde": "20:45",
+      "hasta": "22:00"
+    },
+    {
+      "id": "h-condesa-movil",
+      "tipo": "movil",
+      "sujeto": "condesa",
+      "valor": true,
+      "descripcion": "Quiere comprar la naviera Vargas a precio de saldo tras la muerte del armador. Espía industrial activa."
+    },
+    {
+      "id": "h-condesa-sin-acceso",
+      "tipo": "acceso_arma",
+      "sujeto": "condesa",
+      "valor": false,
+      "descripcion": "Pasajera, sin acceso a zonas de crew ni a medicamentos. No conoce la bodega ni la enfermería."
+    },
+    {
+      "id": "h-antonio-cocina",
+      "tipo": "presencia",
+      "sujeto": "antonio",
+      "lugar": "cocina",
+      "desde": "20:30",
+      "hasta": "21:15"
+    },
+    {
+      "id": "h-antonio-bodega",
+      "tipo": "presencia",
+      "sujeto": "antonio",
+      "lugar": "bodega-vinos",
+      "desde": "20:10",
+      "hasta": "20:25"
+    },
+    {
+      "id": "h-antonio-salon",
+      "tipo": "presencia",
+      "sujeto": "antonio",
+      "lugar": "salon-gala",
+      "desde": "21:15",
+      "hasta": "22:00"
+    },
+    {
+      "id": "h-antonio-sin-movil",
+      "tipo": "movil",
+      "sujeto": "antonio",
+      "valor": false,
+      "descripcion": "Empleado fiel, bien pagado, sin deudas ni herencia. El chantaje le obliga a espiar, no a matar."
+    }
+  ],
+  "pistas": [
+    {
+      "id": "p-ampolla-bodega",
+      "nombre": "Ampolla rota en la bodega",
+      "texto": "Junto a la reserva del armador (Bollinger 1955), una ampolla de vidrio rota con residuos de polvo blanco. Análisis rápido del practicante Gómez: cianuro de potasio. La etiqueta de la ampolla coincide con el lote 47-B de la enfermería.",
+      "revela": [
+        "h-doctora-acceso-arma"
+      ],
+      "origen": {
+        "tipo": "lugar",
+        "lugar": "bodega-vinos"
+      }
+    },
+    {
+      "id": "p-ficha-medica",
+      "nombre": "Ficha 47-B del armario de medicinas",
+      "texto": "En la enfermería, la ficha de control de venenos muestra: \"Cianuro de potasio, lote 47-B. Retirada 20:50 - Dra. Márquez\". La firma es de la doctora. No hay firma de devolución.",
+      "revela": [
+        "h-doctora-acceso-arma"
+      ],
+      "origen": {
+        "tipo": "lugar",
+        "lugar": "enfermeria"
+      }
+    },
+    {
+      "id": "p-testimonio-antonio",
+      "nombre": "Testimonio de Antonio Rossi",
+      "texto": "Antonio declara: \"La cocina da al pasillo de la bodega. A las nueve menos cinco vi bajar a la doctora Márquez y la vi salir a las nueve y diez. Dijo que revisaba el champán del armador. Cuando subí al salón con la bandeja, a las nueve y cuarto, ella estaba junto a la mesa de don Alejandro.\"",
+      "revela": [
+        "h-doctora-bodega",
+        "h-doctora-salon"
+      ],
+      "origen": {
+        "tipo": "testimonio",
+        "sospechoso": "antonio",
+        "requiere": [
+          "p-ampolla-bodega"
+        ]
+      }
+    },
+    {
+      "id": "p-cartas-amor",
+      "nombre": "Cartas de amor entre Isabel y la doctora",
+      "texto": "En el camarote del armador, bajo el cajón del escritorio, unas cartas de amor entre Isabel y la doctora que don Alejandro había encontrado. Encima, una nota suya: \"Elena Márquez: también las medicinas vendidas. En Génova la denuncio al colegio de médicos. Isabel, fuera del testamento si no acaba con esto.\"",
+      "revela": [
+        "h-isabel-movil",
+        "h-doctora-movil"
+      ],
+      "origen": {
+        "tipo": "lugar",
+        "lugar": "camarote-armador"
+      }
+    },
+    {
+      "id": "p-deuda-roberto",
+      "nombre": "Carta de cobro de la mafia marsellesa",
+      "texto": "Entre los papeles del armador, una nota de Roberto que su padre había guardado: \"400.000 francos. Vencimiento: llegada a Génova. Si no, hablamos con la policía. Firma: L.M.\"",
+      "revela": [
+        "h-roberto-movil"
+      ],
+      "origen": {
+        "tipo": "lugar",
+        "lugar": "camarote-armador"
+      }
+    },
+    {
+      "id": "p-partes-telegrafo",
+      "nombre": "Partes de telégrafo del puente",
+      "texto": "El registro del telégrafo confirma: a las 21:15 el capitán envió el parte de posición a Génova. A las 21:28 recibió acuse de recibo. El capitán no salió del puente en toda la franja.",
+      "revela": [
+        "h-capitan-puente"
+      ],
+      "origen": {
+        "tipo": "lugar",
+        "lugar": "puente-mando"
+      }
+    },
+    {
+      "id": "p-testimonio-condesa",
+      "nombre": "Testimonio de la condesa",
+      "texto": "La condesa declara: \"Isabel no se movió de mi lado en toda la cena. Brindamos a las 21:00, 21:15 y 21:25. A las 21:30 don Alejandro se puso pálido, tosió y cayó. Isabel gritó. Yo llamé a la doctora. Ni Isabel ni yo nos levantamos.\"",
+      "revela": [
+        "h-isabel-salon",
+        "h-condesa-salon"
+      ],
+      "origen": {
+        "tipo": "testimonio",
+        "sospechoso": "condesa",
+        "requiere": [
+          "p-cartas-amor"
+        ]
+      }
+    },
+    {
+      "id": "p-colilla-cubierta",
+      "nombre": "Colilla de tabaco rubio en cubierta",
+      "texto": "En la cubierta superior, junto al banco de popa, una colilla de tabaco rubio (marca Ideales, la que fuma Roberto) aún humeante a las 21:40. La marca coincide con la cajetilla hallada en el camarote de Roberto.",
+      "revela": [
+        "h-roberto-cubierta"
+      ],
+      "origen": {
+        "tipo": "lugar",
+        "lugar": "cubierta-superior"
+      }
+    },
+    {
+      "id": "p-falso-parte",
+      "nombre": "Parte de navegación falsificado",
+      "texto": "Entre los papeles del armador, una copia del parte de anoche: \"22:00 - Velocidad reducida a 12 nudos por orden del armador. Riesgo de llegada tardía a Génova.\" La versión oficial dice 18 nudos. Don Alejandro ha escrito encima: \"Ortega, relevado en octubre.\"",
+      "revela": [
+        "h-capitan-movil"
+      ],
+      "origen": {
+        "tipo": "lugar",
+        "lugar": "camarote-armador"
+      }
+    },
+    {
+      "id": "p-chantaje-antonio",
+      "nombre": "Expediente judicial de Antonio Rossi",
+      "texto": "En el archivo de la naviera (copia en el camarote del armador), ficha de Antonio Rossi: \"Marsella, 1932. Robo a mano armada en puerto. Condena: 2 años. Indulto por edad. La condesa de Montclair posee copia y lo chantajea.\"",
+      "revela": [],
+      "origen": {
+        "tipo": "lugar",
+        "lugar": "camarote-armador"
+      }
+    },
+    {
+      "id": "p-practicante",
+      "nombre": "Nota del practicante",
+      "texto": "Nota del practicante Gómez en el libro de guardias: \"La doctora salió a las 20:55 diciendo que iba a revisar el champán del armador. No estaba aquí cuando la llamaron por megafonía.\"",
+      "revela": [
+        "h-doctora-bodega"
+      ],
+      "origen": {
+        "tipo": "lugar",
+        "lugar": "enfermeria"
+      }
+    },
+    {
+      "id": "p-registro-enfermeria",
+      "nombre": "Registro de personal de la enfermería",
+      "texto": "El libro de guardias de la enfermería muestra que solo la doctora Márquez y el practicante Gómez tienen acceso. No hay registro de entrada de Isabel Vargas, Roberto Vargas, la condesa de Montclair ni el capitán Ortega en toda la travesía.",
+      "revela": [
+        "h-isabel-enfermeria",
+        "h-roberto-acceso",
+        "h-condesa-sin-acceso",
+        "h-capitan-sin-acceso"
+      ],
+      "origen": {
+        "tipo": "lugar",
+        "lugar": "enfermeria"
+      }
+    },
+    {
+      "id": "p-testimonio-chef",
+      "nombre": "Testimonio del chef de cocina",
+      "texto": "Antonio se defiende: \"Pregunte al chef: estuve en la cocina con el emplatado de ocho y media a nueve y cuarto. No tengo deudas ni juego, mando mi sueldo a Nápoles cada mes. ¿Por qué iba a matar a mi jefe?\"",
+      "revela": [
+        "h-antonio-cocina",
+        "h-antonio-sin-movil"
+      ],
+      "origen": {
+        "tipo": "testimonio",
+        "sospechoso": "antonio",
+        "requiere": [
+          "p-chantaje-antonio"
+        ]
+      }
+    },
+    {
+      "id": "p-llave-maestra",
+      "nombre": "Llave del camarote",
+      "texto": "En el puente, colgada junto a las cartas náuticas, la llave de la suite del armador.",
+      "revela": [],
+      "origen": {
+        "tipo": "lugar",
+        "lugar": "puente-mando"
+      }
+    }
+  ],
+  "solucion": {
+    "culpable": "doctora",
+    "pruebasClave": [
+      "p-ficha-medica",
+      "p-testimonio-antonio",
+      "p-cartas-amor"
+    ],
+    "explicacion": "La doctora Elena Márquez firmó la retirada del cianuro a las 20:50 y no lo devolvió. Antonio la vio bajar a la bodega de 20:55 a 21:10, donde lo echó en la reserva de champán del armador, y después la vio en el salón junto a su mesa. Don Alejandro había descubierto su aventura con Isabel y la venta de medicinas, e iba a denunciarla en Génova. Isabel no se movió del lado de la condesa y no podía entrar a por el veneno, igual que Roberto (fumando en cubierta), el capitán (en el puente) y la condesa. Antonio no ganaba nada con la muerte de su jefe."
+  }
+}

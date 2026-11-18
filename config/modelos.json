@@ -1,0 +1,10 @@
+{
+  "ollama": {
+    "url": "http://localhost:11434/v1",
+    "modelo": "qwen2.5:3b"
+  },
+  "openrouter": {
+    "modelo": "openrouter/free"
+  },
+  "timeoutMs": 30000
+}

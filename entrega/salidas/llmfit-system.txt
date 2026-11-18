@@ -1,0 +1,11 @@
+
+=== System Specifications ===
+CPU: AMD Ryzen 5 8645HS w/ Radeon 760M Graphics (12 cores)
+Total RAM: 14.88 GB
+Available RAM: 6.17 GB
+RAM Bandwidth: ~63 GB/s (measured)
+Backend: CUDA
+GPU 1: NVIDIA GeForce RTX 3050 6GB Laptop GPU (6.00 GB VRAM, 3.63 GB free, CUDA)
+  PCIe: Gen4 x8 (max Gen4 x16)
+GPU 2: AMD/ATI (0.50 GB VRAM, 0.04 GB free, Vulkan)
+

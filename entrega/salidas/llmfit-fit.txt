@@ -1,0 +1,25 @@
+
+=== System Specifications ===
+CPU: AMD Ryzen 5 8645HS w/ Radeon 760M Graphics (12 cores)
+Total RAM: 14.88 GB
+Available RAM: 5.67 GB
+RAM Bandwidth: ~51 GB/s (measured)
+Backend: CUDA
+GPU 1: NVIDIA GeForce RTX 3050 6GB Laptop GPU (6.00 GB VRAM, 3.81 GB free, CUDA)
+  PCIe: Gen4 x8 (max Gen4 x16)
+GPU 2: AMD/ATI (0.50 GB VRAM, 0.04 GB free, Vulkan)
+
+(2939 models hidden — incompatible backend)
+
+=== Model Compatibility Analysis ===
+Found 13353 compatible model(s)
+
+╭──────────────┬─────────────────────────────────────────────────────────────────────────────────────────────────────────────────┬───────────────────────────────────┬─────────┬───────┬────────────┬────────────────┬──────┬────────────┬──────┬───────────┬─────────────┬─────────────╮
+│ Status       │ Model                                                                                                           │ Provider                          │ Size    │ Score │ tok/s est. │ Quant          │ Conf │ Runtime    │ Mode │ Mem %     │ Context     │ Added to HF │
+├──────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼───────────────────────────────────┼─────────┼───────┼────────────┼────────────────┼──────┼────────────┼──────┼───────────┼─────────────┼─────────────┤
+│ 🟡 Good      │ Sharunkrish/WhiteRabbitNeo-2.5-Qwen-2.5-Coder-7B-AWQ                                                            │ sharunkrish                       │ 7.6B    │ 92    │ 38.1       │ AWQ-4bit       │ est  │ vLLM       │ GPU  │ 73.0%     │ 32k         │ 2026-10-09  │
+│ 🟡 Good      │ Sohailhosseini/Qwen3.5-9B-DeepSeek-V4-Flash-AWQ-W4A16                                                           │ sohailhosseini                    │ 8.2B    │ 92    │ 35.4       │ AWQ-4bit       │ est  │ vLLM       │ GPU  │ 74.7%     │ 262k→57k    │ 2026-08-21  │
+│ 🟡 Good      │ Orion-zhen/Qwen2.5-Coder-7B-Instruct-AWQ                                                                        │ orion-zhen                        │ 7.6B    │ 92    │ 38.1       │ AWQ-4bit       │ est  │ vLLM       │ GPU  │ 73.0%     │ 32k         │ 2024-09-20  │
+│ 🟡 Good      │ Qwen/Qwen2.5-Coder-7B-Instruct-GPTQ-Int4                                                                        │ Alibaba                           │ 7.6B    │ 92    │ 38.1       │ GPTQ-Int4      │ est  │ vLLM       │ GPU  │ 73.0%     │ 32k         │ 2024-09-20  │
+│ 🟡 Good      │ Qwen/CodeQwen1.5-7B-AWQ                                                                                         │ Alibaba                           │ 7.3B    │ 92    │ 40.1       │ AWQ-4bit       │ est  │ vLLM       │ GPU  │ 71.2%     │ 65k→36k     │ 2024-04-21  │
+│ 🟡 Good      │ smoky1496/SpawnPoint-Coder-7B-AWQ                                                                               │ smoky1496                         │ 7.6B    │ 91    │ 38.1       │ AWQ-4bit       │ est  │ vLLM       │ GPU  │ 73.0%     │ 32k         │ 2026-10-09  │

@@ -1,0 +1,9 @@
+GRAVE:
+- p-inventario-herramientas descarta a Eusebio por una torcedura de hombro, pero su coartada es ordenar baúles y bultos pesados en el furgón. Es inverosímil. Cambiar el texto de la pista o la tarea de Eusebio (por ejemplo, cotejar albaranes sentado).
+- camarote-victima exige p-llave-maestra ("quedó cerrada con llave"), pero p-cerradura-forzada y solucion.explicacion dicen que Julián forzó la cerradura con una ganzúa. Aclarar que Julián cogió la llave maestra o quitar la ganzúa.
+
+LEVE:
+- julian es el único con vínculo previo explícito con la víctima en su perfil, y se le señala antes de investigar. Usar una descripción neutral ("viajante de comercio venido a menos").
+- p-testimonio-eusebio requiere el pañuelo y la marca de ganzúa, pero no se justifica por qué le hacen hablar. Añadir que temía que le culparan.
+
+RESUMEN: No lo aprobaría en su estado actual.

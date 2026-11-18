@@ -1,0 +1,8 @@
+sesión ses_e5a780789ffeVUVQQaPeELN7Pz
+[synthetic] 
+
+> build · nvidia/nemotron-3-ultra-550b-a55b:free
+El caso ha sido **aprobado** por el verificador. Tanto la lógica (estructura, coartadas, accesos, pistas, solución) como la narrativa son consistentes.
+
+¿Quieres que lo mueva de `casos/borradores/` a `casos/` para que quede listo para jugar, o hay algo más en lo que quieras trabajar?
+[idle] succeeded

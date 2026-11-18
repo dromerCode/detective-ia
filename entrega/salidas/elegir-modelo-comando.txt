@@ -1,0 +1,42 @@
+sesión ses_e5a664c5bffeT0Ge2U6aeEeGdQ
+[agent-switched] build
+
+> build · deepseek-v4.1-flash-free
+Voy a comprobar la configuración actual de los dos ficheros.
+  [tool] read {"path":"/home/picha/Proyectos/lab-opencode/config/modelos.json"} => ""
+  [tool] read {"path":"/home/picha/Proyectos/lab-opencode/opencode.json"} => ""
+
+> build · deepseek-v4.1-flash-free
+Ambos ficheros están correctos. Déjame revisar la lógica del script para explicar bien el criterio de elección.
+  [tool] read {"path":"/home/picha/Proyectos/lab-opencode/scripts/elegir-modelo.ts"} => ""
+
+> build · deepseek-v4.1-flash-free
+  [tool] shell {"command":"node -e '\nconst fs=require(\"fs\");\nconst o=JSON.parse(fs.readFileSync(\"opencode.json\",\"utf8\"));\nconst m=JSON.parse(fs.readFileSync(\"config/modelos.json\",\"utf8\"));\nconsole.log( => ""
+
+> build · deepseek-v4.1-flash-free
+## Qué modelo se ha elegido: `qwen2.5:3b`
+
+No el primero de llmfit. llmfit proponía **llama3.2:3b** (87,3 puntos, ajuste *Good* en GPU, 4,75 GB, ~60,3 tok/s), que es el mejor **por encaje en el hardware**, no por calidad interpretando a un personaje. Por eso `scripts/elegir-modelo.ts` no se queda con el primero: con `--aplicar` coge los **dos** mejores candidatos de llmfit, los descarga y les pasa una prueba de fidelidad sobre `casos/el-cortijo.json` (4 sospechosos × 3 preguntas = 12 respuestas). Una respuesta cuenta como fiel si **menciona su lugar de coartada** y **no rompe el personaje** (`rompePersonaje` de `src/servidor/filtro.ts`). Gana el que más acierta.
+
+## Por qué ha ganado qwen2.5:3b
+
+**llama3.2:3b: 7/12.** Escribe más bonito, pero se inventa y se contradice:
+
+- Lucía primero dice «no recuerdo nada… estaba en casa» y en la siguiente respuesta «Estuve en Cocina de 21:45 a 22:45».
+- Ramón alterna «salón con Lucía» y «Patio y establo» para la misma franja.
+- Enrique se va de tema con una venta de un Ford Escort y suelta «no quiero hablar de eso», y sitúa la escena en el concesionario y en el Salón.
+- Carmen, la más grave: acaba confesando que fue a la bodega a por el atizador de hierro. Eso es filtrar la solución, justo lo que el filtro y la regla «lo que un NPC no debe contar no entra en su prompt» intentan evitar.
+
+**qwen2.5:3b: 12/12.** Es sobrio y repetitivo, pero en las 12 respuestas dice el lugar correcto de su coartada y no se sale del papel. Para un NPC que debe sostener una coartada concreta, la consistencia vale más que la prosa. De ahí `Modelo elegido: qwen2.5:3b`.
+
+## Comprobación de los ficheros (no ha fallado)
+
+- `opencode.json`: `"small_model": "ollama/qwen2.5:3b"`, y `provider.ollama.models` contiene exactamente `"qwen2.5:3b"` con `baseURL: http://localhost:11434/v1`. El `$schema` se conserva.
+- `config/modelos.json`: `ollama.modelo = "qwen2.5:3b"` y `ollama.url = http://localhost:11434/v1`.
+- Los dos coinciden (`small_model === "ollama/" + ollama.modelo`) y ambos JSON parsean sin errores.
+- `"model"` (el modelo principal de OpenCode) sigue siendo `openrouter/nvidia/nemotron-3-ultra-550b-a55b:free`: es correcto, `elegir-modelo` solo toca el `small_model`, que es el que usan los NPC.
+
+## Un aviso sobre la prueba
+
+La prueba mide solo «nombra el sitio y no rompe el personaje», así que un modelo que responde con una frase plantilla aprueba sin esfuerzo. Se ve en qwen: Ramón añade «luego fui a la bodega para vigilar» y Carmen «luego fui a mi casa», y aun así cuentan como fieles. El cambio respecto a llama es real y mejora (nada de contradicciones ni confesiones), pero si quieres distinguir «fiel» de «fiel y con algo de sustancia» convendría endurecer la comprobación en `fidelidad()`: exigir el rango horario, penalizar repetir la misma frase o detectar menciones a `bodega`/arma en quien no debe.
+[idle] succeeded

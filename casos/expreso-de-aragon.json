@@ -1,0 +1,277 @@
+{
+  "id": "expreso-de-aragon",
+  "titulo": "Crimen en el Expreso de Aragón",
+  "ambientacion": "El tren nocturno Madrid-Barcelona cruzando los Monegros en una gélida noche de noviembre de 1950. Un corte de energía detiene el convoy en mitad de la estepa.",
+  "introduccion": "A las 23:35, durante una parada imprevista del tren nocturno en mitad de la estepa aragonesa, don Gaspar Santonja, un acaudalado marchante de joyas, es hallado muerto en su camarote privado de primera clase con un golpe letal en la sien. Su maletín con un valioso rubí birmano ha desaparecido. El tren sigue detenido y nadie ha podido descender.",
+  "dificultad": "media",
+  "crimen": {
+    "victima": "Don Gaspar Santonja, 62 años, comerciante de alhajas",
+    "lugar": "camarote-victima",
+    "arma": "un pesado pisapapeles de bronce de su escritorio",
+    "desde": "22:45",
+    "hasta": "23:15"
+  },
+  "lugares": [
+    {
+      "id": "coche-comedor",
+      "nombre": "Coche-comedor",
+      "descripcion": "Mesas con manteles de lino y restos de la cena. El revisor y varios pasajeros conversaban aquí al calor de las estufas de carbón."
+    },
+    {
+      "id": "furgon-equipajes",
+      "nombre": "Furgón de equipajes",
+      "descripcion": "Baúles, jaulas y sacas de correspondencia apiladas en penumbra, contiguo al pasillo de primera clase. Huele a madera vieja y serrín húmedo."
+    },
+    {
+      "id": "pasillo-primera",
+      "nombre": "Pasillo de primera clase",
+      "descripcion": "Moqueta desgastada y puertas de caoba con cerraduras de latón. Hay un armario de servicio de los mozos al fondo."
+    },
+    {
+      "id": "cabina-guardafrenos",
+      "nombre": "Cabina del guardafrenos",
+      "descripcion": "Un pequeño compartimento técnico al final del convoy con herramientas, faroles de carburo y repuestos del sistema de frenado."
+    },
+    {
+      "id": "camarote-victima",
+      "nombre": "Camarote privado de Santonja",
+      "descripcion": "Camarote número 4. El cuerpo de Santonja yace sobre la alfombra junto a la mesilla. La puerta tiene pestillo de seguridad y quedó cerrada con llave tras el crimen.",
+      "requiere": "p-llave-maestra"
+    }
+  ],
+  "sospechosos": [
+    {
+      "id": "valeria",
+      "nombre": "Valeria Monforte",
+      "perfil": "Cantante de zarzuela de 34 años, viaja hacia una gira en teatros de Barcelona.",
+      "personalidad": "Dramática y esquiva. Fuma constantemente con boquilla y desvía cualquier pregunta con aires teatrales.",
+      "secreto": "Viaja con documentación falsificada para eludir un embargo judicial de su compañía en Madrid.",
+      "coartada": {
+        "lugar": "coche-comedor",
+        "desde": "22:30",
+        "hasta": "23:25"
+      },
+      "mienteCoartada": false,
+      "conoce": [
+        "h-valeria-comedor",
+        "h-julian-movil"
+      ],
+      "respuestaReserva": "Yo no me moví del coche-comedor en toda la noche; estuve bebiendo anís junto a la estufa."
+    },
+    {
+      "id": "eusebio",
+      "nombre": "Eusebio Lamana",
+      "perfil": "Mozo de coche-cama de 52 años, empleado de RENFE desde su fundación.",
+      "personalidad": "Servicial y apocado, temeroso de perder su puesto de trabajo. Tartamudea cuando le interrogan mandos o inspectores.",
+      "secreto": "Suele hurtar pequeñas propinas y botellas de licor de los carritos del coche-cama para revenderlas.",
+      "coartada": {
+        "lugar": "furgon-equipajes",
+        "desde": "22:30",
+        "hasta": "23:20"
+      },
+      "mienteCoartada": false,
+      "conoce": [
+        "h-eusebio-sin-acceso",
+        "h-julian-camarote"
+      ],
+      "respuestaReserva": "Estaba cotejando albaranes sentado en el furgón, se lo juro, no subí a los pasillos para nada."
+    },
+    {
+      "id": "julian",
+      "nombre": "Julián Albiac",
+      "perfil": "Pasajero de segunda clase de 40 años, viajante de comercio venido a menos.",
+      "personalidad": "Firme y altivo, intenta aparentar distinción burguesa aunque sus puños y cuello de camisa están raídos.",
+      "secreto": "Carga en su maleta billetes de lotería falsificados que planeaba colocar al llegar a Cataluña.",
+      "coartada": {
+        "lugar": "coche-comedor",
+        "desde": "22:40",
+        "hasta": "23:20"
+      },
+      "mienteCoartada": true,
+      "conoce": [
+        "h-julian-camarote",
+        "h-julian-acceso",
+        "h-julian-movil"
+      ],
+      "respuestaReserva": "Permanecí en el coche-comedor cenando tranquilamente hasta que el tren se detuvo por completo."
+    },
+    {
+      "id": "mateo",
+      "nombre": "Mateo Rius",
+      "perfil": "Mecánico ferroviario y guardafrenos del convoy, 29 años.",
+      "personalidad": "Brusco y lacónico. Solo le interesan las piezas de la máquina y las calderas.",
+      "secreto": "Ocultaba en su caja de herramientas octavillas políticas clandestinas impresas en Zaragoza.",
+      "coartada": {
+        "lugar": "cabina-guardafrenos",
+        "desde": "22:40",
+        "hasta": "23:30"
+      },
+      "mienteCoartada": false,
+      "conoce": [
+        "h-mateo-sin-movil"
+      ],
+      "respuestaReserva": "Llevo el turno de guardia de la presión de frenos en mi cabina. Mi trabajo es la máquina, nada más."
+    }
+  ],
+  "hechos": [
+    {
+      "id": "h-valeria-comedor",
+      "tipo": "presencia",
+      "sujeto": "valeria",
+      "lugar": "coche-comedor",
+      "desde": "22:30",
+      "hasta": "23:25"
+    },
+    {
+      "id": "h-eusebio-sin-acceso",
+      "tipo": "acceso_arma",
+      "sujeto": "eusebio",
+      "valor": false
+    },
+    {
+      "id": "h-julian-camarote",
+      "tipo": "presencia",
+      "sujeto": "julian",
+      "lugar": "camarote-victima",
+      "desde": "22:50",
+      "hasta": "23:10"
+    },
+    {
+      "id": "h-julian-acceso",
+      "tipo": "acceso_arma",
+      "sujeto": "julian",
+      "valor": true
+    },
+    {
+      "id": "h-julian-movil",
+      "tipo": "movil",
+      "sujeto": "julian",
+      "valor": true,
+      "descripcion": "Santonja le arruinó en un negocio de gemas y Julián necesitaba robar el rubí para salvarse de la cárcel por deudas."
+    },
+    {
+      "id": "h-mateo-sin-movil",
+      "tipo": "movil",
+      "sujeto": "mateo",
+      "valor": false,
+      "descripcion": "No conocía de nada a Santonja ni tiene el menor interés ni conocimiento sobre el mercado de piedras preciosas."
+    }
+  ],
+  "pistas": [
+    {
+      "id": "p-llave-maestra",
+      "nombre": "Llave maestra del tren",
+      "texto": "Colgada en el casillero del armario de servicio del pasillo de primera clase, está la llave maestra capaz de abrir y cerrar los cerrojos de los camarotes.",
+      "revela": [],
+      "origen": {
+        "tipo": "lugar",
+        "lugar": "pasillo-primera"
+      }
+    },
+    {
+      "id": "p-carta-reclamo",
+      "nombre": "Carta de requerimiento judicial",
+      "texto": "Una notificación del juzgado dirigida a Julián Albiac encontrada en una papelera del comedor: Santonja le exigía cincuenta mil pesetas inmediatas bajo amenaza de prisión por estafa.",
+      "revela": [
+        "h-julian-movil"
+      ],
+      "origen": {
+        "tipo": "lugar",
+        "lugar": "coche-comedor"
+      }
+    },
+    {
+      "id": "p-declaracion-revisor",
+      "nombre": "Hoja de servicio del revisor",
+      "texto": "Anotación del interventor: «La señorita Monforte estuvo canturreando en la mesa 3 del comedor desde las diez y media hasta que avisaron de la avería a las once y veinticinco».",
+      "revela": [
+        "h-valeria-comedor"
+      ],
+      "origen": {
+        "tipo": "lugar",
+        "lugar": "coche-comedor"
+      }
+    },
+    {
+      "id": "p-inventario-herramientas",
+      "nombre": "Cuaderno de guardia del furgón",
+      "texto": "Registro oficial de RENFE: Eusebio sufrió una torcedura en el hombro derecho a las ocho de la tarde; no puede alzar peso ni empuñar objetos con fuerza contundente y se le asignó la tarea de cotejar albaranes sentado.",
+      "revela": [
+        "h-eusebio-sin-acceso"
+      ],
+      "origen": {
+        "tipo": "lugar",
+        "lugar": "furgon-equipajes"
+      }
+    },
+    {
+      "id": "p-informe-personal",
+      "nombre": "Ficha laboral del personal",
+      "texto": "Expediente del mozo y del mecánico: Mateo Rius es huérfano de ferroviario, sin antecedentes ni vinculación alguna con los pasajeros del convoy ni el negocio joyero de la víctima.",
+      "revela": [
+        "h-mateo-sin-movil"
+      ],
+      "origen": {
+        "tipo": "lugar",
+        "lugar": "cabina-guardafrenos"
+      }
+    },
+    {
+      "id": "p-panuelo-monograma",
+      "nombre": "Pañuelo de seda con iniciales",
+      "texto": "En la papelera del pasillo de primera clase hay un pañuelo de seda fina con las iniciales «J. A.» bordadas, manchado de hollín.",
+      "revela": [],
+      "origen": {
+        "tipo": "lugar",
+        "lugar": "pasillo-primera"
+      }
+    },
+    {
+      "id": "p-guante-sangre",
+      "nombre": "Guante de cuero con restos de bronce",
+      "texto": "Oculto bajo la litera del camarote de la víctima, un guante de piel de caballero con micropartículas de bronce del pisapapeles y restos de cera de equipaje de Julián.",
+      "revela": [
+        "h-julian-acceso"
+      ],
+      "origen": {
+        "tipo": "lugar",
+        "lugar": "camarote-victima"
+      }
+    },
+    {
+      "id": "p-cerradura-forzada",
+      "nombre": "Huellas de grasa en el armario",
+      "texto": "El pestillo del armario de servicio del pasillo tiene restos recientes de grasa de carbón, indicando que alguien cogió la llave maestra del casillero y la devolvió a su sitio tras usarla.",
+      "revela": [],
+      "origen": {
+        "tipo": "lugar",
+        "lugar": "pasillo-primera"
+      }
+    },
+    {
+      "id": "p-testimonio-eusebio",
+      "nombre": "Testimonio de Eusebio",
+      "texto": "Temiendo que las sospechas recaigan sobre él por encontrarse cerca, el mozo Eusebio confiesa que, mirando a través del cristal de la puerta del furgón contiguo, vio salir a Julián Albiac del camarote de Santonja a las once y diez de la noche, cerrando con sigilo y guardándose algo abultado en la gabardina.",
+      "revela": [
+        "h-julian-camarote"
+      ],
+      "origen": {
+        "tipo": "testimonio",
+        "sospechoso": "eusebio",
+        "requiere": [
+          "p-panuelo-monograma",
+          "p-cerradura-forzada"
+        ]
+      }
+    }
+  ],
+  "solucion": {
+    "culpable": "julian",
+    "pruebasClave": [
+      "p-testimonio-eusebio",
+      "p-guante-sangre",
+      "p-carta-reclamo"
+    ],
+    "explicacion": "Julián Albiac estaba arruinado y Santonja le amenazaba con la cárcel por una deuda de cincuenta mil pesetas. Aprovechó el viaje para robar el rubí: cogió la llave maestra del armario del pasillo, entró en el camarote, empuñó el pesado pisapapeles de bronce con su guante de piel y asestó el golpe fatal entre las 22:50 y las 23:10 antes de devolver la llave. Eusebio le vio salir del camarote a las 23:10 desde la puerta del furgón contiguo con el botín. Valeria estuvo en el comedor toda la franja, Eusebio estaba impedido físicamente para asestar el golpe y Mateo no tenía ninguna relación ni motivo con la víctima."
+  }
+}
