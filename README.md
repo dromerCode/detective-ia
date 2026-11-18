@@ -30,4 +30,4 @@ npm run verificar
 - `.opencode/`: agentes y comandos de OpenCode.
 - `src/`: código del juego.
 - `scripts/`: validar casos, probar los NPC y elegir modelo.
-- `entrega/`: memoria y capturas.
+- `entrega/`: memoria (PDF), presentación (pptx) y capturas.
